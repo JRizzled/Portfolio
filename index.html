@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarod Rieth – Portfolio</title>
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
+</script>
+
+  <style>
+    /* simple scroll‑snap so each section feels like a "page" */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      scroll-snap-type: y mandatory;
+    }
+    section {
+      scroll-snap-align: start;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="bg-zinc-900 text-white font-sans">
+  <!-- ========== NAVBAR ========== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-zinc-900/70 backdrop-blur-lg">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+      <span class="text-lg font-semibold">Jarod Rieth</span>
+      <!-- desktop nav -->
+      <nav class="hidden gap-8 md:flex">
+        <a href="#home" class="hover:text-emerald-400 transition">Home</a>
+        <a href="research.html" class="hover:text-emerald-400 transition">Research</a>
+        <a href="#about" class="hover:text-emerald-400 transition">About Me</a>
+        <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+      </nav>
+      <!-- hamburger -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <!-- mobile nav -->
+    <nav id="mobile-nav" class="hidden flex-col gap-6 pb-8 pt-4 md:hidden">
+      <a href="#home" class="px-4" onclick="toggleNav()">Home</a>
+      <a href="#photo" class="px-4" onclick="toggleNav()">Photo</a>
+      <a href="#about" class="px-4" onclick="toggleNav()">About Me</a>
+      <a href="#contact" class="px-4" onclick="toggleNav()">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ========== HOME ========== -->
+  <section id="home" class="flex min-h-screen items-center pt-20 md:pt-24">
+    <div class="mx-auto grid max-w-7xl flex-1 grid-cols-1 md:grid-cols-2">
+      <img src="my-portrait.jpg" alt="Portrait of Jarod Rieth" class="h-full w-full object-cover" />
+      <div class="flex flex-col justify-center bg-zinc-800 px-8 py-16 md:px-16">
+        <h1 class="text-6xl font-bold leading-tight md:text-8xl">My<br />Portfolio</h1>
+        <hr class="my-8 border-zinc-600" />
+        <span class="mt-auto text-sm text-zinc-400">Page | 01</span>
+      
+      </div>
+    </div>
+  </section>
+  <!-- ========== INTRODUCTION / ABOUT ME ========== -->
+  <section id="about" class="flex min-h-screen items-center bg-zinc-900 pt-20 md:pt-24">
+    <div class="mx-auto flex max-w-4xl flex-col px-8 text-center">
+      <h2 class="text-5xl font-bold">Introduction</h2>
+      <span class="mt-2 text-lg text-emerald-400">About Me</span>
+      <div class="mt-12 space-y-6 text-lg leading-relaxed text-gray-200">
+        <p>Jarod Rieth is an enthusiastic Computer Science major at Missouri University of Science and Technology, specializing in Computational Science, with a minor in Philosophy. Throughout his academic journey, he has combined technical proficiency with creative insight, exemplified by his research project “Who Built the Mountain that LLMs Scale? Data Provenance and the Ethics of Generative AI.” This study reflects his dedication to addressing complex ethical issues in artificial intelligence through meticulous analysis and a strong commitment to data integrity.</p>
+        <p>Jarod’s technical skills include proficiency in programming languages such as C++, Python, SQL, and bash shell scripting, and he is comfortable working across Windows, Linux, and MacOS platforms. His interdisciplinary background further enhances his ability to merge rigorous computational methods with philosophical inquiry, particularly in the realms of machine learning and data mining. Alongside his technical expertise, his classical piano training nurtures a refined attention to detail and creative problem solving.</p>
+        <p>His diverse work experience—from roles as a medical records technician and pharmacy technician to a restaurant host—highlights his excellent interpersonal skills, adaptability, and strong work ethic, making him a valuable asset in any team.</p>
+      </div>
+      <span class="mt-12 text-sm text-zinc-400">Page | 02</span>
+    </div>
+  </section>
+
+  <!-- ========== RESEARCH – LITERATURE REVIEW ========== -->
+  <section id="resTab" class="flex min-h-screen items-center bg-zinc-900 pt-20 md:pt-24">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-8 md:grid-cols-2 md:gap-20">
+      <div>
+        <h3 class="text-4xl font-bold md:text-5xl"> <a href="research.html"> Research: Literature Review</a></h3>
+        <h4 class="mt-6 text-2xl font-semibold">Literature Review: Data Provenance in AI</h4>
+        <p class="mt-8 text-lg leading-relaxed text-gray-200">Over the past few years, generative AI has increasingly grown in intelligence and usage across nearly every domain. For some, this very concept of machine learning—or using generative AI for anything whatsoever—is fundamentally at odds with their moral compass. However, technological progress is an inevitable part of societal evolution. Yet, we cannot ignore the fact that these AI models are literally built upon a mountain of creative labor, without which, they would never have reached the skies. <br /><br />It is important to understand what training data popular generative AI models rely on, how much of it is open source vs proprietary, and whether these models document or keep record of the data they use. This literature review surveys the current state of data provenance and data tracking across common AI systems.</p>
+      </div>
+      <div class="flex items-center justify-center">
+        <!-- placeholder box to mimic the gray square w/ icon -->
+        <div class="aspect-square w-full max-w-md bg-gray-300/30 flex items-center justify-center text-6xl italic text-gray-700">
+          <embed src="lit_review.pdf" type="application/pdf" width="100%" height="600" class="w-full max-w-md bg-gray-300/30" />
+        </div>
+      </div>
+    </div>
+    <span class="absolute bottom-6 right-10 text-sm text-zinc-400">Page | 03</span>
+  </section>
+
+  <!-- ========== RESEARCH – DATA ANALYSIS ========== -->
+  <section class="flex min-h-screen items-center bg-zinc-900 pt-20 md:pt-24">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-8 md:grid-cols-2 md:gap-20">
+      <div class="flex items-center justify-center order-1 md:order-none">
+        <img src="count_by_year.png" alt="Keyword frequency bar chart" class="w-full max-w-xl object-contain" />
+      </div>
+      <div>
+        <h3 class="text-4xl font-bold md:text-5xl">Research: Analysis</h3>
+        <h4 class="mt-6 text-2xl font-semibold">Data Analysis: Data Provenance in AI</h4>
+        <p class="mt-8 text-lg leading-relaxed text-gray-200">Continuing our analysis of data provenance and tracking, this study examines the prevalence of keywords such as “data tracking”, “data provenance”, “data integrity”, and “copyright protection” within the abstracts of every Computer Science research paper in arXiv’s 2.5+ million‑paper corpus. Using Kaggle‑sourced metadata and a custom Python script, we tracked occurrences of these keywords by publication year and compared them with total paper counts. The resulting visualization highlights an industry‑wide deficit of attention to data tracking and protection—an issue that must be addressed.</p>
+      </div>
+    </div>
+    <span class="absolute bottom-6 right-10 text-sm text-zinc-400">Page | 03</span>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="flex min-h-screen flex-col items-center justify-center bg-zinc-800 px-8 text-center">
+    <h2 class="text-4xl font-bold md:text-5xl">Get in Touch</h2>
+    <p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-200">Feel free to reach out for collaboration, questions, or just to say hello!</p>
+    <a href="mailto:jarod.rieth@example.com" class="mt-10 rounded-2xl px-8 py-4 text-lg font-medium text-zinc-900 bg-emerald-400 hover:bg-emerald-300 transition">Send an Email</a>
+    <span class="mt-24 text-sm text-zinc-400">Page | 04</span>
+  </section>
+
+  <!-- ========== FOOTER / SMALL SCRIPT ========== -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    function toggleNav() {
+      mobileNav.classList.toggle('hidden');
+    }
+    menuBtn.addEventListener('click', toggleNav);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => {
+        section.classList.add('fade-in');
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Addidtions
+- Use gsap.js for animations 
+    - Smooth transition for maximizing text boxes and maybe PDFs?
+    - Smooth maximizing of charts and graphs
+- Find library for pretty display of PDF.
+- Explore Chart.js for possible built in maximizing abilities
+- Possibly look at rechart for slightly better GUI. 
+
+
+-----------------
+
+expand-cards-bootstrap
+expanding-flex-cards
+expanding-text-box-button

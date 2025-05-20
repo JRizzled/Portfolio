@@ -1,0 +1,22 @@
+The following chart breaks down the trends in Computer Science research by subcategory. This 
+chart took stats from the STEM research hub website arXiv. I extracted the data 
+from the Statistics part of the website https://arxiv.org/stats/main, converted it into a 
+CSV, parsed it, and then used Chart.js top plot the number of submissions by subcategory of 
+the main category, Computer Science.
+
+If you click on the button Show Top 5 Lines, and then click on Show Legend, you will see the following lines:
+    
+    1. "cs.CV – Computer Vision & Pattern Rec.",
+    2. "cs.LG – Machine Learning",
+    3. "cs.AI – Artificial Intelligence",
+    4. "cs.CY – Computers & Society",
+    5. "cs.CR – Cryptography & Security"
+
+You will see that the top 3 lines, which are all AI related, have grown in terms
+of total number of publications, where is the last 2, which related more to the 
+ethics and humanity aspect of technology, have largely stagnated. 
+
+This, in my opinion, further highlights the dire need for more research 
+into these more interdisciplinary fields of AI and Philosophy, or more specifically, 
+AI and Ethics.
+

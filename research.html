@@ -1,0 +1,786 @@
+<!--  research.html  -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf‑8" />
+  <title>Literature Review – Data Provenance in AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>[data-highlight]{background:#22d3ee40;}</style>
+  <style>
+/* ...existing code... */
+.expandable-article-wrapper {
+  overflow: hidden;
+  transition: border-color 0.8s cubic-bezier(.4,0,.2,1), box-shadow 0.4s cubic-bezier(.4,0,.2,1);
+  border-bottom: 2px solid transparent;
+}
+.expandable-article {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.8s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
+  will-change: max-height, opacity;
+}
+.expandable-article-wrapper.expanded {
+  border-bottom: 2px solid #14b8a6;
+  box-shadow: 0 8px 32px 0 #14b8a633;
+}
+.expandable-article-wrapper.expanded .expandable-article {
+  max-height: 2000px; /* Large enough for content */
+  opacity: 1;
+}
+</style>
+
+</head>
+<body class="bg-neutral-900 text-white font-[Inter]">
+  <!-- shared navbar -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-neutral-800/70 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-4">
+      <a href="index.html" class="font-semibold">Jarod Rieth</a>
+      <ul class="hidden md:flex gap-8 text-sm">
+        <li><a class="hover:text-teal-400" href="index.html#home">Home</a></li>
+        <li><a class="hover:text-teal-400" href="index.html#photo">Photo</a></li>
+        <li><a class="hover:text-teal-400" href="index.html#about">About Me</a></li>
+        <li class="text-teal-400">Research</li>
+        <li><a class="hover:text-teal-400" href="index.html#contact">Contact</a></li>
+      </ul>
+      <button id="menuBtn" class="md:hidden">
+        <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden bg-neutral-800 border-t border-neutral-700">
+      <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#home">Home</a>
+      <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#photo">Photo</a>
+      <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#about">About Me</a>
+      <span class="block px-6 py-3 bg-neutral-700">Research</span>
+      <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="pt-32 pb-16 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Literature Review</h1>
+    <p class="text-xl text-teal-300">Data Provenance in AI</p>
+
+  </section>
+
+  <!-- content accordion -->
+  <main id="review" class="max-w-5xl mx-auto px-6 pb-20 space-y-6">
+    <!-- SECTION TEMPLATE -->
+    <details open class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Tech Community’s Attitude</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <p>In March of 2023, Elon Musk, CEO of Tesla and SpaceX, signed an open letter urging a pause on AI, stating that “</span>*<span style="background-color: transparent">AI systems with human-competitive intelligence can pose profound risks to society and humanity, as shown by extensive research</span>*<span style="background-color: transparent">” </span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F16283176%2Fitems%2FVQM7ZFE8%22%5D%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/VQM7ZFE8">“Pause Giant AI Experiments: An Open Letter”</a></span>)</span>. <span style="background-color: transparent">Elon Musk was not the only notable signatory, more than a thousand tech CEOs, researchers and scientists signed on to this letter. This includes various researchers from Googles DeepMind AI project, the CEO of Stability AI which is well known for pioneering Stable Diffusion, a text-to-image AI model that allowed anyone to generate realistic photos, digital paintings, and artwork with a simple text prompt. However, since then, virtually all of these companies, have continued pursuing research and development of AI. Stability AI released Stable Diffusion 3 in February of 2024, and Elon Musk, in the same month of signing this letter, started xAI which has developed Grok as a foundational model.</p>
+      </article>
+      </div>
+    </details>
+
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Problem Statement</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <p>One of the biggest and most glaring problems with today’s major AI Models, is the lack of
+          oversight and documentation of the data used to train the models. This is also
+          acknowledged in the academic community, although the level of attention given to it, is
+          quite small compared \< 1% compared to other topics within the field of computer science.
+          However, of the few papers that addressed this subject, the consensus seems to be clear:
+          Data transparency, documentation, and data provenance need major reform via changes
+          in norms as well as legal means. Some example papers include
+          <l>>Longpre et al., “A Large-Scale Audit of Dataset Licensing and Attribution in AI”</l>,
+          <l>Longpre et al., “Consent in Crisis”</l>
+          <l>Korea Copyright Commission and Lee, “Copyright Protection Against Use of Copyrighted Works Without Permission in AI Machine Learning”</l>
+          <l>Longpre et al., “Data Authenticity, Consent, and Provenance for AI Are All Broken”</l>
+          <l>Oreamuno et al., “The State of Documentation Practices of Third-Party Machine Learning Models and Datasets”</l>
+          <l>Hardinges, Simperl, and Shadbolt, “We Must Fix the Lack of Transparency Around the Data Used to Train Foundation Models.”</l>
+
+          </p>
+      </article>
+      </div>
+    </details>
+
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Main Questions</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <ol class="list-decimal pl-6 space-y-2">
+          <li>How much is known on the web about the data being used for training large AI models?</li>
+          <li>Of the data we find, how much is documented by the model creators themselves?</li>
+          <li>What percentage of CS research is dedicated to provenance, attribution and tracking?</li>
+        </ol>
+      </article>
+      </div>
+    </details>
+
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Model Comparison Table</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="expand overflow-x-auto px-4 pb-6 pt-2 expandable-article">
+
+        <div class="table-headers text-2xl font-bold text-center mb-4">LLM Table</div>
+        <table> <!--LLM Table-->
+          <thead>
+            <tr class="bg-neutral-800">
+              <th class="px-3 py-2 border border-neutral-700">Category of Concern</th>
+              <th class="px-3 py-2 border border-neutral-700">Stable Diffusion</th>
+              <th class="px-3 py-2 border border-neutral-700">DALLE</th>
+              <th class="px-3 py-2 border border-neutral-700">Midjourney</th>
+              <th class="px-3 py-2 border border-neutral-700">Veo</th>
+              <th class="px-3 py-2 border border-neutral-700">Imagen</th>
+              <th class="px-3 py-2 border border-neutral-700">FLUX</th>
+              <th class="px-3 py-2 border border-neutral-700">ChatGPT</th>
+              <th class="px-3 py-2 border border-neutral-700">Meta AI (Llama 3\)</th>
+              <th class="px-3 py-2 border border-neutral-700">Claude</th>
+              <th class="px-3 py-2 border border-neutral-700">Qwen</th>
+              <th class="px-3 py-2 border border-neutral-700">Gemini</th>
+              <th class="px-3 py-2 border border-neutral-700">Perplexity AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Copyright</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Likely</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential (third-party code)</td>
+              <td class="px-3 py-2 border border-neutral-700">Likely</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential (LoRAs)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential (Google allegations)</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential (bias)</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential (Google allegations)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Data Privacy</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (web scraping)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (web scraping)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (web scraping, user data)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (third-party code)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (web scraping)</td>
+              <td class="px-3 py-2 border border-neutral-700">User-dependent</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Bias</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">No explicit mention</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential (synthetic data/LoRAs)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">No explicit mention</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Content Moderation</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (watermarking)</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">User-dependent</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Transparency</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (LAION-5B)</td>
+              <td class="px-3 py-2 border border-neutral-700">No</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Yes (open weight)</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+              <td class="px-3 py-2 border border-neutral-700">Partially</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <br></br>
+        <div class="table-headers text-2xl font-bold text-center mb-4">Breakdown of specifics:</div>
+        <div class="table-headers text-2xl italic mb-4">Text-generation:</div>
+        <br></br>
+        <table>
+          <thead>
+            <tr>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Model</strong></th>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Training Data</strong></th>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Controversies</strong></th>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Sources</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Stable Diffusion</td>
+              <td class="px-3 py-2 border border-neutral-700">LAION-5B (5B image-text pairs)</td>
+              <td class="px-3 py-2 border border-neutral-700">Copyright lawsuits, class-action suit</td>
+              <td class="px-3 py-2 border border-neutral-700">news articles</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">DALL-E</td>
+              <td class="px-3 py-2 border border-neutral-700">250M text-image pairs from internet</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential copyright issues</td>
+              <td class="px-3 py-2 border border-neutral-700">OpenAI blog posts, research papers</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Midjourney</td>
+              <td class="px-3 py-2 border border-neutral-700">Unknown, likely large image dataset</td>
+              <td class="px-3 py-2 border border-neutral-700">Part of class-action suit for copyright</td>
+              <td class="px-3 py-2 border border-neutral-700">News articles about the suit</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Veo</td>
+              <td class="px-3 py-2 border border-neutral-700">Unknown</td>
+              <td class="px-3 py-2 border border-neutral-700">None known</td>
+              <td class="px-3 py-2 border border-neutral-700">Company website</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Imagen</td>
+              <td class="px-3 py-2 border border-neutral-700">LAION-400M</td>
+              <td class="px-3 py-2 border border-neutral-700">Copyright concerns, similar to Stable Diffusion</td>
+              <td class="px-3 py-2 border border-neutral-700"><a href="https://arxiv.org/abs/2205.11487">Google research paper</a></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">FLUX</td>
+              <td class="px-3 py-2 border border-neutral-700">Unknown</td>
+              <td class="px-3 py-2 border border-neutral-700">None known</td>
+              <td class="px-3 py-2 border border-neutral-700">None found</td>
+            </tr>
+          </tbody>
+        </table>
+        <br></br>
+        <div class="table-headers text-2xl italic mb-4">Image-generation:</div>
+        <br></br>
+        <table>
+          <thead>
+            <tr>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Model</strong></th>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Training Data</strong></th>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Controversies</strong></th>
+              <th class="px-3 py-2 border border-neutral-700"><strong>Sources</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">ChatGPT (GPT-1)</td>
+              <td class="px-3 py-2 border border-neutral-700">Common Crawl, Wikipedia, Books1, etc. (GPT-1,GPT2 only)</td>
+              <td class="px-3 py-2 border border-neutral-700">New York Times lawsuit, personal data concerns</td>
+              <td class="px-3 py-2 border border-neutral-700"><a href="https://arxiv.org/abs/2005.14165">OpenAI research papers</a>, news articles</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Meta AI</td>
+              <td class="px-3 py-2 border border-neutral-700">Public text data, specifics in paper (Llama 2 only)</td>
+              <td class="px-3 py-2 border border-neutral-700">Potential copyright issues</td>
+              <td class="px-3 py-2 border border-neutral-700"><a href="https://ai.meta.com/blog/llama-2-open-source-pretrained-and-fine-tuned-large-language-models/">Meta's Llama 2 blog post</a></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Claude</td>
+              <td class="px-3 py-2 border border-neutral-700">Varied text sources, filtered</td>
+              <td class="px-3 py-2 border border-neutral-700">None specific mentioned</td>
+              <td class="px-3 py-2 border border-neutral-700">Anthropic's blog posts</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Qwen</td>
+              <td class="px-3 py-2 border border-neutral-700">Up to 18T tokens, multilingual data</td>
+              <td class="px-3 py-2 border border-neutral-700">None known</td>
+              <td class="px-3 py-2 border border-neutral-700"><a href="https://qwenlm.github.io/">Qwen website</a>, Alibaba Cloud docs</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Gemini</td>
+              <td class="px-3 py-2 border border-neutral-700">Large text datasets</td>
+              <td class="px-3 py-2 border border-neutral-700">None specific mentioned</td>
+              <td class="px-3 py-2 border border-neutral-700">Google's blog posts</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border border-neutral-700">Perplexity AI</td>
+              <td class="px-3 py-2 border border-neutral-700">Likely curated dataset, undisclosed</td>
+              <td class="px-3 py-2 border border-neutral-700">None known</td>
+              <td class="px-3 py-2 border border-neutral-700">Perplexity AI website, news articles</td>
+            </tr>
+          </tbody>
+        </table>
+    </details>
+
+    
+
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Conclusion</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <p>The result of scouring several hundreds of pages every corner on each of the text-generation AI Models' websites (So all of openai.com, claude.ai and each domain for their respective model),  general data documentation on earlier models existed but newer ones show little to know documentation in data training whatsoever. Even in the older models such as GPT-1/2 and Llama-2, only large scale datasets which encompass terabytes of data are recorded, and these datasets are difficult if not impossible to parse through. When it comes to text-to-image models, a similar trend is seen, with older models showing more documentation than newer ones. 
+
+          While there is some degree of data documentation, there are still various measures that need to be implemented to ensure that this documentation is more clear, data provenance is provided, and legal regulations are maintained.  
+          </p>
+      </article>
+      </div>
+    </details>
+    
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Full Report</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <div class="aspect-square w-full max-w-md bg-gray-300/30 flex items-center justify-center text-6xl italic text-gray-700">
+         <embed src="lit_review.pdf" type="application/pdf" width="100%" height="600" class="w-full max-w-md bg-gray-300/30" /> -->
+         </div>
+      </article>
+      </div>
+    </details>
+    
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Bibliography (toggle)</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <p>Longpre et al. “A Large‑Scale Audit …” (2024)</p>
+        <p>Hardinges, Simperl &amp; Shadbolt “We Must Fix …” (2024)</p>
+        <!-- add remaining citations -->
+      </article>
+      </div>
+    </details>
+
+    
+
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Blurb - Lit Review</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        As a Computer Science Major, I have a vested interest in AI as it becomes more popular and more relevent in our day to day 
+lives. As a Philosophy Minor, I have an interest in not only the metaphysical aspects of AI, but also the ethical side of it.
+The purpose of this Literature review is to look at how AI companies, such as Meta, Google, OpenAI and others, often if not 
+always fail to document and record the data they use to train their models on. Much of this data is personal and essentially 
+anything you have published on social media or Youtube has likely been used in one of these models. The audience for this 
+blurb is mainly for people who have at least a high school education and prefereably some college and basic understanding of computers
+However, it is also for artists, writers, and other content creaters who have concerns about copyright infringement and their 
+own art and intelectual creative labor being usurped for Big Tech to use for their own benefit without any compensation. 
+
+This file was created using a combination of my own web surfing, as well as, somewhat ironically, 
+assistance from AI and it's Deepsearch function. I compiled my data into several notes, and 
+then consolidated them into the final tables. The tables break down the problems and aspects of 
+several AI models of all different forms.
+      </article>
+      </div>
+    </details>
+    
+  </main>
+  <section class="pt-32 pb-16 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Research Analysis</h1>
+    <p class="max-w-3xl mx-auto mt-6 text-neutral-300">View how much data privacy and provenance matters to the accademic community</p>
+
+
+  </section>
+  <main id="review" class="max-w-5xl mx-auto px-6 pb-20 space-y-6">
+    <!-- SECTION TEMPLATE -->
+    <details open class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4
+                      flex justify-between items-center">
+        <span>arXiV Computer Science research trends (by subcategory)</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <img src="count_by_year.png" alt="arXiv CS Publications by Year" class="mx-auto rounded shadow-lg my-6" style="max-width:100%;height:auto;">
+      </article>
+      </div>
+    </details>
+
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Full Report</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <div class="aspect-square w-full max-w-md bg-gray-300/30 flex items-center justify-center text-6xl italic text-gray-700">
+         <embed src="Research Analysis.pdf" type="application/pdf" width="100%" height="600" class="w-full max-w-md bg-gray-300/30" /> -->
+         </div>
+      </article>
+      </div>
+    </details>
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Blurb - Research Analysis </span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        This study examines the prevalence of keywords such as “data tracking”, “data provenance”, “data integrity”, and “copyright protection” within the abstracts of every Computer Science research paper in arXiv’s 2.5+ million‑paper corpus. Using Kaggle‑sourced metadata and a custom Python script, we tracked occurrences of these keywords by publication year and compared them with total paper counts. The resulting visualization highlights an industry‑wide deficit of attention to data tracking and protection—an issue that must be addressed.
+      </article>
+      </div>
+    </details>
+    </main>
+
+  
+  <section class="pt-32 pb-16 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Info Graphic</h1>
+    <p class="max-w-3xl mx-auto mt-6 text-neutral-300">View the trends in Computer Science research below</p>
+
+
+  </section>
+  <main id="review" class="max-w-5xl mx-auto px-6 pb-20 space-y-6">
+    <!-- SECTION TEMPLATE -->
+    <details open class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4
+                      flex justify-between items-center">
+        <span>arXiV Computer Science research trends (by subcategory)</span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <canvas id="dataChart" width="400" height="200"></canvas>
+        <div class="flex justify-center gap-4 my-4">
+          <button id="showTop5Btn" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 rounded text-white font-semibold">Show Important Lines</button>
+          <button id="showAllBtn" class="px-4 py-2 bg-neutral-700 hover:bg-neutral-800 rounded text-white font-semibold">Show All Lines</button>
+
+          <button id="showLegend" class="px-4 py-2 bg-neutral-700 hover:bg-neutral-800 rounded text-white font-semibold">Show Legend</button>
+        </div>
+        <div class="text-sm text-neutral-400 text-center mt-2">Click on the legend to toggle lines</div>
+        
+      </article>
+      </div>
+    </details>
+    <details class="group border border-neutral-700 rounded">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+        <span>Blurb - Infograph </span>
+        <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+      <div class="expandable-article-wrapper">
+      <article id="infographic-chart" class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+        <p>The following chart breaks down the trends in Computer Science research by subcategory. This 
+          chart took stats from the STEM research hub website <a href="https://arxiv.org/stats/main" target="_blank">arXiv</a>. 
+          I extracted the data from the Statistics part of the website, converted it into a CSV, parsed it, 
+          and then used Chart.js to plot the number of submissions by subcategory of the main category, Computer Science.</p>
+          
+          <p>If you click on the button <strong>Show Top 5 Lines</strong>, and then click on <strong>Show Legend</strong>, 
+          you will see the following lines:</p>
+          
+          <ol>
+            <li><code>cs.CV</code> – Computer Vision &amp; Pattern Rec.</li>
+            <li><code>cs.LG</code> – Machine Learning</li>
+            <li><code>cs.AI</code> – Artificial Intelligence</li>
+            <li><code>cs.CY</code> – Computers &amp; Society</li>
+            <li><code>cs.CR</code> – Cryptography &amp; Security</li>
+          </ol>
+          
+          <p>You will see that the top 3 lines, which are all AI-related, have grown in terms
+          of total number of publications, whereas the last 2, which relate more to the 
+          ethics and humanity aspect of technology, have largely stagnated.</p>
+          
+          <p>This, in my opinion, further highlights the dire need for more research 
+          into these more interdisciplinary fields of AI and Philosophy — or more specifically, 
+          AI and Ethics.</p>
+          
+        
+              </article>
+      </div>
+    </details>
+  </main>
+
+
+
+
+  <footer class="py-8 text-center text-sm text-neutral-400">
+    Literature Review — Page | 03
+  </footer>
+
+  <script>
+    /* mobile nav */
+    document.getElementById('menuBtn').onclick = () =>
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+
+    
+
+    const ctx = document.getElementById('dataChart').getContext('2d');
+    
+    const data = {
+      /* x-axis */
+      labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
+               2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+    
+      /* six lines */
+      datasets: [
+        { label: 'cs.CL – Computation & Language',
+          data: [72, 66, 92, 143, 214, 394, 579, 1296,
+                 1916, 2959, 4160, 5548, 6551, 7106, 10418, 14948],
+          borderColor: '#60a5fa', tension: .25, fill: false },
+    
+        { label: 'cs.CV – Computer Vision & Pattern Rec.',
+          data: [98, 236, 272, 409, 643, 1079, 1828, 3066,
+                 4866, 7233, 8424, 10937, 12656, 14514, 18720, 23794],
+          borderColor: '#34d399', tension: .25, fill: false },
+    
+        { label: 'cs.LG – Machine Learning',
+          data: [126, 186, 242, 776, 708, 727, 1097, 1518,
+                 2312, 4704, 8781, 11045, 13032, 13688, 16267, 20002],
+          borderColor: '#facc15', tension: .25, fill: false },
+    
+        { label: 'cs.AI – Artificial Intelligence',
+          data: [228, 307, 539, 674, 1413, 660, 582, 871,
+                 1192, 1432, 1210, 1898, 2123, 2106, 3313, 4911],
+          borderColor: '#f472b6', tension: .25, fill: false },
+    
+        { label: 'cs.CY – Computers & Society',
+          data: [74, 80, 49, 127, 263, 320, 418, 519,
+                 589, 808, 767, 1433, 1162, 984, 1386, 2062],
+          borderColor: '#c084fc', tension: .25, fill: false },
+    
+        { label: 'cs.CR – Cryptography & Security',
+          data: [230, 345, 354, 469, 447, 530, 586, 702,
+                 1045, 1523, 1915, 2384, 2655, 2815, 3218, 4334],
+          borderColor: '#f87171', tension: .25, fill: false },
+        { label: 'cs.AR – Hardware Architecture',
+          data: [13, 31, 37, 38, 51, 80, 61, 102, 126, 121, 134, 307, 387, 428, 525, 778],
+          borderColor: '#a3a3a3', tension: .25, fill: false },
+        { label: 'cs.CC – Computational Complexity',
+          data: [178, 207, 195, 242, 296, 279, 297, 296, 306, 282, 320, 333, 319, 318, 364, 385],
+          borderColor: '#d1fae5', tension: .25, fill: false },
+        { label: 'cs.CE – Computer Engineering',
+          data: [39, 64, 54, 113, 166, 199, 143, 136, 188, 208, 239, 406, 346, 383, 476, 793],
+          borderColor: '#fca5a5', tension: .25, fill: false },
+        { label: 'cs.CG – Computational Geometry',
+          data: [93, 116, 135, 181, 219, 219, 239, 247, 303, 323, 303, 321, 356, 309, 298, 326],
+          borderColor: '#fcd34d', tension: .25, fill: false },
+        { label: 'cs.DB – Databases',
+          data: [117, 148, 187, 321, 223, 257, 276, 311, 359, 377, 472, 567, 512, 530, 592, 723],
+          borderColor: '#a7f3d0', tension: .25, fill: false },
+        { label: 'cs.DC – Distributed Computing',
+          data: [122, 246, 283, 319, 406, 456, 638, 687, 880, 1070, 1253, 1401, 1344, 1212, 1328, 1668],
+          borderColor: '#fbbf24', tension: .25, fill: false },
+        { label: 'cs.DL – Digital Libraries',
+          data: [57, 81, 93, 106, 204, 159, 179, 178, 201, 334, 214, 292, 375, 275, 280, 306],
+          borderColor: '#818cf8', tension: .25, fill: false },
+        { label: 'cs.DM – Discrete Mathematics',
+          data: [174, 189, 236, 233, 258, 265, 341, 317, 329, 332, 336, 268, 241, 242, 257, 280],
+          borderColor: '#f472b6', tension: .25, fill: false },
+        { label: 'cs.DS – Data Structures & Algorithms',
+          data: [312, 411, 482, 553, 693, 774, 867, 966, 1045, 1189, 1288, 1431, 1184, 1231, 1355, 1407],
+          borderColor: '#6ee7b7', tension: .25, fill: false },
+        { label: 'cs.ET – Emerging Technologies',
+          data: [null, null, 25, 34, 59, 98, 115, 141, 151, 192, 216, 182, 219, 211, 233, 322],
+          borderColor: '#f9a8d4', tension: .25, fill: false },
+        { label: 'cs.FL – Formal Languages',
+          data: [79, 118, 130, 135, 149, 207, 177, 171, 195, 175, 233, 219, 241, 218, 255, 249],
+          borderColor: '#fcd34d', tension: .25, fill: false },
+        { label: 'cs.GL – General Literature',
+          data: [4, 1, null, 8, 7, 1, 1, 5, 4, 9, 11, 7, 5, 7, 6, 6],
+          borderColor: '#a5b4fc', tension: .25, fill: false },
+        { label: 'cs.GR – Graphics',
+          data: [10, 25, 23, 30, 56, 44, 75, 94, 137, 198, 253, 274, 252, 311, 389, 399],
+          borderColor: '#fca5a5', tension: .25, fill: false },
+        { label: 'cs.GT – Game Theory',
+          data: [113, 188, 213, 304, 308, 376, 356, 428, 446, 450, 523, 605, 686, 705, 847, 991],
+          borderColor: '#fbbf24', tension: .25, fill: false },
+        { label: 'cs.HC – Human-Computer Interaction',
+          data: [53, 59, 48, 77, 102, 158, 177, 305, 374, 538, 833, 1130, 1270, 1461, 2202, 3436],
+          borderColor: '#a3e635', tension: .25, fill: false },
+        { label: 'cs.IR – Information Retrieval',
+          data: [86, 106, 114, 220, 213, 224, 243, 287, 473, 701, 840, 1000, 1193, 1288, 1666, 2193],
+          borderColor: '#fca5a5', tension: .25, fill: false },
+        { label: 'cs.IT – Information Theory',
+          data: [938, 1216, 1331, 1583, 1928, 1984, 2399, 2568, 2766, 2397, 2232, 2340, 2615, 2521, 2429, 2476],
+          borderColor: '#fbbf24', tension: .25, fill: false },
+        { label: 'cs.LO – Logic in Computer Science',
+          data: [229, 373, 389, 439, 480, 629, 584, 600, 663, 722, 763, 738, 791, 699, 896, 805],
+          borderColor: '#818cf8', tension: .25, fill: false },
+        { label: 'cs.MA – Multiagent Systems',
+          data: [33, 38, 39, 54, 61, 85, 63, 84, 115, 179, 263, 254, 263, 356, 354, 486],
+          borderColor: '#f472b6', tension: .25, fill: false },
+        { label: 'cs.MM – Multimedia',
+          data: [30, 63, 48, 54, 75, 86, 100, 140, 151, 171, 183, 189, 193, 187, 235, 315],
+          borderColor: '#a3a3a3', tension: .25, fill: false },
+        { label: 'cs.MS – Mathematical Software',
+          data: [18, 20, 25, 56, 41, 65, 68, 76, 78, 83, 88, 103, 97, 41, 69, 78],
+          borderColor: '#fbbf24', tension: .25, fill: false },
+        { label: 'cs.NE – Neural and Evolutionary Computing',
+          data: [67, 92, 89, 148, 188, 248, 254, 310, 412, 562, 600, 740, 610, 737, 716, 922],
+          borderColor: '#fca5a5', tension: .25, fill: false },
+        { label: 'cs.NI – Networking and Internet Architecture',
+          data: [298, 565, 457, 680, 756, 827, 748, 983, 1004, 1235, 1287, 1335, 1302, 1307, 1336, 1638],
+          borderColor: '#a7f3d0', tension: .25, fill: false },
+        { label: 'cs.OH – Other Computer Science',
+          data: [74, 181, 78, 192, 143, 162, 120, 111, 97, 96, 106, 93, 60, 49, 54, 49],
+          borderColor: '#f9a8d4', tension: .25, fill: false },
+        { label: 'cs.OS – Operating Systems',
+          data: [8, 20, 24, 19, 30, 17, 24, 19, 26, 30, 48, 48, 20, 31, 50, 52],
+          borderColor: '#a5b4fc', tension: .25, fill: false },
+        { label: 'cs.PF – Performance',
+          data: [21, 36, 32, 36, 37, 53, 40, 58, 88, 95, 126, 119, 86, 64, 81, 109],
+          borderColor: '#fcd34d', tension: .25, fill: false },
+        { label: 'cs.PL – Programming Languages',
+          data: [75, 129, 153, 151, 209, 197, 213, 272, 345, 388, 413, 415, 416, 399, 449, 443],
+          borderColor: '#fbbf24', tension: .25, fill: false },
+        { label: 'cs.RO – Robotics',
+          data: [41, 42, 78, 98, 124, 182, 228, 550, 880, 1276, 1890, 2559, 3337, 3803, 5081, 6765],
+          borderColor: '#6ee7b7', tension: .25, fill: false },
+        { label: 'cs.SC – Symbolic Computation',
+          data: [47, 50, 55, 54, 83, 77, 53, 80, 82, 85, 73, 69, 65, 83, 93, 93],
+          borderColor: '#fca5a5', tension: .25, fill: false },
+        { label: 'cs.SD – Sound',
+          data: [14, 14, 20, 15, 30, 46, 101, 213, 294, 389, 426, 524, 992, 1226, 1240, 1502],
+          borderColor: '#fbbf24', tension: .25, fill: false },
+        { label: 'cs.SE – Software Engineering',
+          data: [104, 189, 199, 311, 338, 585, 381, 408, 605, 815, 920, 1159, 1713, 1552, 2061, 2845],
+          borderColor: '#818cf8', tension: .25, fill: false },
+        { label: 'cs.SI – Social and Information Networks',
+          data: [1, 47, 194, 311, 408, 539, 624, 683, 729, 837, 920, 1216, 1026, 891, 920, 991],
+          borderColor: '#a3e635', tension: .25, fill: false },
+      ]
+    };
+
+    // Save the original datasets for restoration
+    const originalDatasets = JSON.parse(JSON.stringify(data.datasets));
+
+    // IDs of the 5 categories to keep
+    const top5Ids = [
+      "cs.CV – Computer Vision & Pattern Rec.",
+      "cs.LG – Machine Learning",
+      "cs.AI – Artificial Intelligence",
+      "cs.CY – Computers & Society",
+      "cs.CR – Cryptography & Security"
+    ];
+
+    // Reference to the chart instance
+    const chartInstance = new Chart(ctx, {
+      type: 'line',
+      data,
+      options: {
+        responsive: true,
+        //interaction: { mode: 'index', intersect: false },
+        plugins: {
+          title: {
+            display: true,
+            text: 'arXiv CS Publications by Sub-category (2009-2024)'
+          },
+          legend: { position: 'top' }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Year' }},
+          y: { beginAtZero: true,
+               title: { display: true, text: 'Number of papers' }}
+        }
+      }
+    });
+    chartInstance.options.plugins.legend.display = false; // Hide legend by default
+    chartInstance.update();
+
+    // Button handlers
+    document.getElementById('showTop5Btn').onclick = function() {
+      chartInstance.data.datasets = originalDatasets.filter(ds => top5Ids.includes(ds.label));
+      chartInstance.update();
+    };
+
+    document.getElementById('showAllBtn').onclick = function() {
+      chartInstance.data.datasets = JSON.parse(JSON.stringify(originalDatasets));
+      chartInstance.update();
+    };
+    document.getElementById('showLegend').onclick = function() {
+      chartInstance.options.plugins.legend.display = !chartInstance.options.plugins.legend.display;
+      chartInstance.update();
+    };
+
+    // Expanding card effect for all details/articles
+function setupExpandableArticles() {
+  document.querySelectorAll('details').forEach(details => {
+    const wrapper = details.querySelector('.expandable-article-wrapper');
+    if (!wrapper) return;
+    function toggleExpand() {
+      if (details.open) {
+        wrapper.classList.add('expanded');
+      } else {
+        wrapper.classList.remove('expanded');
+      }
+    }
+    details.addEventListener('toggle', toggleExpand);
+    // Set initial state
+    if (details.open) wrapper.classList.add('expanded');
+    else wrapper.classList.remove('expanded');
+  });
+}
+document.addEventListener('DOMContentLoaded', setupExpandableArticles);
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+As a Computer Science Major, I have a vested interest in AI as it becomes more popular and more relevent in our day to day 
+lives. As a Philosophy Minor, I have an interest in not only the metaphysical aspects of AI, but also the ethical side of it.
+The purpose of this Literature review is to look at how AI companies, such as Meta, Google, OpenAI and others, often if not 
+always fail to document and record the data they use to train their models on. Much of this data is personal and essentially 
+anything you have published on social media or Youtube has likely been used in one of these models. The audience for this 
+blurb is mainly for people who have at least a high school education and prefereably some college and basic understanding of computers
+However, it is also for artists, writers, and other content creaters who have concerns about copyright infringement and their 
+own art and intelectual creative labor being usurped for Big Tech to use for their own benefit without any compensation. 
+
+This file was created using a combination of my own web surfing, as well as, somewhat ironically, 
+assistance from AI and it's Deepsearch function. I compiled my data into several notes, and 
+then consolidated them into the final tables. The tables break down the problems and aspects of 
+several AI models of all different forms.
