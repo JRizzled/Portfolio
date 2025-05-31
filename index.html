@@ -7,8 +7,8 @@
   <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="script.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
-</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="style.css">
 
   <style>
     /* simple scroll‑snap so each section feels like a "page" */
@@ -35,6 +35,8 @@
     }
   </style>
 </head>
+
+
 <body class="bg-zinc-900 text-white font-sans">
   <!-- ========== NAVBAR ========== -->
   <header class="fixed top-0 inset-x-0 z-50 bg-zinc-900/70 backdrop-blur-lg">
@@ -43,9 +45,19 @@
       <!-- desktop nav -->
       <nav class="hidden gap-8 md:flex">
         <a href="#home" class="hover:text-emerald-400 transition">Home</a>
-        <a href="research.html" class="hover:text-emerald-400 transition">Research</a>
+        <div class="dropdown"> 
+          <a href="#resTab" class="hover:text-emerald-400 transition">Research</a>
+          <div class="dropdown-content"> 
+            <a href="research.html" class="hover:text-emerald-400 transition">Main Research</a>
+            <a href="graphEcon.html" class="hover:text-emerald-400 transition">Economic Prediction</a>
+            
+          </div>
+        </div>
+
+        
         <a href="#about" class="hover:text-emerald-400 transition">About Me</a>
         <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+
       </nav>
       <!-- hamburger -->
       <button id="menu-btn" class="md:hidden focus:outline-none">
@@ -120,7 +132,26 @@
       </div>
     </div>
     <span class="absolute bottom-6 right-10 text-sm text-zinc-400">Page | 03</span>
+
   </section>
+    <!-- ========== RESEARCH – Economic Recession Prediction ========== -->
+  <section id="resTab" class="flex min-h-screen items-center bg-zinc-900 pt-20 md:pt-24">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-8 md:grid-cols-2 md:gap-20">
+      <div>
+        <h3 class="text-4xl font-bold md:text-5xl"> <a href="graphEcon.html"> Research: In depth Analysis</a></h3>
+        <h4 class="mt-6 text-2xl font-semibold">Prediction of Economic Recession with Precision</h4>
+        <p class="mt-8 text-lg leading-relaxed text-gray-200">In the age of LLMs, transformers and diffusion models are all the buzz. However, this group endeavor demonstrated that Graph Neural Networks show promising results in fields such as economic prediction and sociological analysis.</p>
+      </div>
+      <div class="flex items-center justify-center">
+        <!-- placeholder box to mimic the gray square w/ icon -->
+        <div class="aspect-square w-full max-w-md bg-gray-300/30 flex items-center justify-center text-6xl italic text-gray-700">
+          <embed src="DataMining_report.pdf" type="application/pdf" width="100%" height="600" class="w-full max-w-md bg-gray-300/30" />
+        </div>
+      </div>
+    </div>
+    <span class="absolute bottom-6 right-10 text-sm text-zinc-400">Page | 03</span>
+  </section>
+  
 
   <!-- ========== CONTACT ========== -->
   <section id="contact" class="flex min-h-screen flex-col items-center justify-center bg-zinc-800 px-8 text-center">

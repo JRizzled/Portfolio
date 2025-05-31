@@ -8,38 +8,15 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>[data-highlight]{background:#22d3ee40;}</style>
-  <style>
-/* ...existing code... */
-.expandable-article-wrapper {
-  overflow: hidden;
-  transition: border-color 0.8s cubic-bezier(.4,0,.2,1), box-shadow 0.4s cubic-bezier(.4,0,.2,1);
-  border-bottom: 2px solid transparent;
-}
-.expandable-article {
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.8s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
-  will-change: max-height, opacity;
-}
-.expandable-article-wrapper.expanded {
-  border-bottom: 2px solid #14b8a6;
-  box-shadow: 0 8px 32px 0 #14b8a633;
-}
-.expandable-article-wrapper.expanded .expandable-article {
-  max-height: 2000px; /* Large enough for content */
-  opacity: 1;
-}
-</style>
 
 </head>
-<body class="bg-neutral-900 text-white font-[Inter]">
+<body class="bg-neutral-900 text-white font-sans">
   <!-- shared navbar -->
   <header class="fixed inset-x-0 top-0 z-50 bg-neutral-800/70 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-4">
       <a href="index.html" class="font-semibold">Jarod Rieth</a>
       <ul class="hidden md:flex gap-8 text-sm">
         <li><a class="hover:text-teal-400" href="index.html#home">Home</a></li>
-        <li><a class="hover:text-teal-400" href="index.html#photo">Photo</a></li>
         <li><a class="hover:text-teal-400" href="index.html#about">About Me</a></li>
         <li class="text-teal-400">Research</li>
         <li><a class="hover:text-teal-400" href="index.html#contact">Contact</a></li>
@@ -53,7 +30,7 @@
     </nav>
     <div id="mobileMenu" class="md:hidden hidden bg-neutral-800 border-t border-neutral-700">
       <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#home">Home</a>
-      <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#photo">Photo</a>
+      
       <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#about">About Me</a>
       <span class="block px-6 py-3 bg-neutral-700">Research</span>
       <a class="block px-6 py-3 hover:bg-neutral-700" href="index.html#contact">Contact</a>
@@ -71,17 +48,16 @@
   <main id="review" class="max-w-5xl mx-auto px-6 pb-20 space-y-6">
     <!-- SECTION TEMPLATE -->
     <details open class="group border border-neutral-700 rounded">
-      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
+      <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4
+                      flex justify-between items-center">
         <span>Tech Community’s Attitude</span>
         <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <p>In March of 2023, Elon Musk, CEO of Tesla and SpaceX, signed an open letter urging a pause on AI, stating that “</span>*<span style="background-color: transparent">AI systems with human-competitive intelligence can pose profound risks to society and humanity, as shown by extensive research</span>*<span style="background-color: transparent">” </span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F16283176%2Fitems%2FVQM7ZFE8%22%5D%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/VQM7ZFE8">“Pause Giant AI Experiments: An Open Letter”</a></span>)</span>. <span style="background-color: transparent">Elon Musk was not the only notable signatory, more than a thousand tech CEOs, researchers and scientists signed on to this letter. This includes various researchers from Googles DeepMind AI project, the CEO of Stability AI which is well known for pioneering Stable Diffusion, a text-to-image AI model that allowed anyone to generate realistic photos, digital paintings, and artwork with a simple text prompt. However, since then, virtually all of these companies, have continued pursuing research and development of AI. Stability AI released Stable Diffusion 3 in February of 2024, and Elon Musk, in the same month of signing this letter, started xAI which has developed Grok as a foundational model.</p>
       </article>
-      </div>
     </details>
 
     <details class="group border border-neutral-700 rounded">
@@ -91,8 +67,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <p>One of the biggest and most glaring problems with today’s major AI Models, is the lack of
           oversight and documentation of the data used to train the models. This is also
           acknowledged in the academic community, although the level of attention given to it, is
@@ -109,7 +84,6 @@
 
           </p>
       </article>
-      </div>
     </details>
 
     <details class="group border border-neutral-700 rounded">
@@ -119,15 +93,13 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <ol class="list-decimal pl-6 space-y-2">
           <li>How much is known on the web about the data being used for training large AI models?</li>
           <li>Of the data we find, how much is documented by the model creators themselves?</li>
           <li>What percentage of CS research is dedicated to provenance, attribution and tracking?</li>
         </ol>
       </article>
-      </div>
     </details>
 
     <details class="group border border-neutral-700 rounded">
@@ -137,8 +109,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="expand overflow-x-auto px-4 pb-6 pt-2 expandable-article">
+      <article class="expand overflow-x-auto px-4 pb-6 pt-2">
 
         <div class="table-headers text-2xl font-bold text-center mb-4">LLM Table</div>
         <table> <!--LLM Table-->
@@ -366,14 +337,12 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <p>The result of scouring several hundreds of pages every corner on each of the text-generation AI Models' websites (So all of openai.com, claude.ai and each domain for their respective model),  general data documentation on earlier models existed but newer ones show little to know documentation in data training whatsoever. Even in the older models such as GPT-1/2 and Llama-2, only large scale datasets which encompass terabytes of data are recorded, and these datasets are difficult if not impossible to parse through. When it comes to text-to-image models, a similar trend is seen, with older models showing more documentation than newer ones. 
 
           While there is some degree of data documentation, there are still various measures that need to be implemented to ensure that this documentation is more clear, data provenance is provided, and legal regulations are maintained.  
           </p>
       </article>
-      </div>
     </details>
     
     <details class="group border border-neutral-700 rounded">
@@ -383,13 +352,11 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <div class="aspect-square w-full max-w-md bg-gray-300/30 flex items-center justify-center text-6xl italic text-gray-700">
          <embed src="lit_review.pdf" type="application/pdf" width="100%" height="600" class="w-full max-w-md bg-gray-300/30" /> -->
          </div>
       </article>
-      </div>
     </details>
     
     <details class="group border border-neutral-700 rounded">
@@ -399,13 +366,11 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <p>Longpre et al. “A Large‑Scale Audit …” (2024)</p>
         <p>Hardinges, Simperl &amp; Shadbolt “We Must Fix …” (2024)</p>
         <!-- add remaining citations -->
       </article>
-      </div>
     </details>
 
     
@@ -417,8 +382,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         As a Computer Science Major, I have a vested interest in AI as it becomes more popular and more relevent in our day to day 
 lives. As a Philosophy Minor, I have an interest in not only the metaphysical aspects of AI, but also the ethical side of it.
 The purpose of this Literature review is to look at how AI companies, such as Meta, Google, OpenAI and others, often if not 
@@ -433,7 +397,6 @@ assistance from AI and it's Deepsearch function. I compiled my data into several
 then consolidated them into the final tables. The tables break down the problems and aspects of 
 several AI models of all different forms.
       </article>
-      </div>
     </details>
     
   </main>
@@ -453,11 +416,9 @@ several AI models of all different forms.
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <img src="count_by_year.png" alt="arXiv CS Publications by Year" class="mx-auto rounded shadow-lg my-6" style="max-width:100%;height:auto;">
       </article>
-      </div>
     </details>
 
     <details class="group border border-neutral-700 rounded">
@@ -467,13 +428,11 @@ several AI models of all different forms.
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <div class="aspect-square w-full max-w-md bg-gray-300/30 flex items-center justify-center text-6xl italic text-gray-700">
          <embed src="Research Analysis.pdf" type="application/pdf" width="100%" height="600" class="w-full max-w-md bg-gray-300/30" /> -->
          </div>
       </article>
-      </div>
     </details>
     <details class="group border border-neutral-700 rounded">
       <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
@@ -482,11 +441,9 @@ several AI models of all different forms.
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         This study examines the prevalence of keywords such as “data tracking”, “data provenance”, “data integrity”, and “copyright protection” within the abstracts of every Computer Science research paper in arXiv’s 2.5+ million‑paper corpus. Using Kaggle‑sourced metadata and a custom Python script, we tracked occurrences of these keywords by publication year and compared them with total paper counts. The resulting visualization highlights an industry‑wide deficit of attention to data tracking and protection—an issue that must be addressed.
       </article>
-      </div>
     </details>
     </main>
 
@@ -507,8 +464,7 @@ several AI models of all different forms.
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <canvas id="dataChart" width="400" height="200"></canvas>
         <div class="flex justify-center gap-4 my-4">
           <button id="showTop5Btn" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 rounded text-white font-semibold">Show Important Lines</button>
@@ -519,7 +475,6 @@ several AI models of all different forms.
         <div class="text-sm text-neutral-400 text-center mt-2">Click on the legend to toggle lines</div>
         
       </article>
-      </div>
     </details>
     <details class="group border border-neutral-700 rounded">
       <summary class="cursor-pointer select-none text-lg md:text-xl font-semibold bg-neutral-800 p-4 flex justify-between items-center">
@@ -528,8 +483,7 @@ several AI models of all different forms.
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       </summary>
-      <div class="expandable-article-wrapper">
-      <article id="infographic-chart" class="prose prose-invert max-w-none px-4 pb-6 pt-2 expandable-article">
+      <article id="infographic-chart" class="prose prose-invert max-w-none px-4 pb-6 pt-2">
         <p>The following chart breaks down the trends in Computer Science research by subcategory. This 
           chart took stats from the STEM research hub website <a href="https://arxiv.org/stats/main" target="_blank">arXiv</a>. 
           I extracted the data from the Statistics part of the website, converted it into a CSV, parsed it, 
@@ -556,7 +510,6 @@ several AI models of all different forms.
           
         
               </article>
-      </div>
     </details>
   </main>
 
@@ -761,26 +714,6 @@ several AI models of all different forms.
       chartInstance.options.plugins.legend.display = !chartInstance.options.plugins.legend.display;
       chartInstance.update();
     };
-
-    // Expanding card effect for all details/articles
-function setupExpandableArticles() {
-  document.querySelectorAll('details').forEach(details => {
-    const wrapper = details.querySelector('.expandable-article-wrapper');
-    if (!wrapper) return;
-    function toggleExpand() {
-      if (details.open) {
-        wrapper.classList.add('expanded');
-      } else {
-        wrapper.classList.remove('expanded');
-      }
-    }
-    details.addEventListener('toggle', toggleExpand);
-    // Set initial state
-    if (details.open) wrapper.classList.add('expanded');
-    else wrapper.classList.remove('expanded');
-  });
-}
-document.addEventListener('DOMContentLoaded', setupExpandableArticles);
   </script>
 </body>
 </html>
