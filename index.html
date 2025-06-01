@@ -17,6 +17,8 @@
     }
     body {
       scroll-snap-type: y mandatory;
+      opacity: 1;
+      transition: opacity .5s;
     }
     section {
       scroll-snap-align: start;
@@ -48,8 +50,9 @@
         <div class="dropdown"> 
           <a href="#resTab" class="hover:text-emerald-400 transition">Research</a>
           <div class="dropdown-content"> 
-            <a href="research.html" class="hover:text-emerald-400 transition">Main Research</a>
-            <a href="graphEcon.html" class="hover:text-emerald-400 transition">Economic Prediction</a>
+            
+            <a id="my_element" href="research.html" >Main Research</a>
+            <a id="my_element" href="graphEcon.html" >Economic Prediction</a>
             
           </div>
         </div>
@@ -57,6 +60,8 @@
         
         <a href="#about" class="hover:text-emerald-400 transition">About Me</a>
         <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+        <button onclick="transitionToPage('index2.html')"">Page Change</button>
+  
 
       </nav>
       <!-- hamburger -->

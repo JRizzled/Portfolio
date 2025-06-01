@@ -2,22 +2,32 @@
 .dropdown {
     position: relative;
     display: inline-block;
+
   }
   
 .dropdown-content {
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
     padding: 12px 16px;
     z-index: 1;
     border-top: greenyellow;
+    background-color: rgba(0, 0, 0, .5);;
+
   }
 
-.dropdown-content a {
-    border: green;
-  }
+
 
 .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+#my_element::before {
+    background-color: rgba(0, 0, 0, .3);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#my_element:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: greenyellow
   }

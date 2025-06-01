@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarod Rieth - Portfolio</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body data-color-scheme="dark">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <h1>Jarod Rieth</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#photo" class="nav-link">Photo</a></li>
+                    <li><a href="#about" class="nav-link">About Me</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><button style="background-color: black;"class="nav-link" onclick="transitionToPage('index.html')"">Page Change</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    
+                        <img class="placeholder-image" src="my-portrait.jpg" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 100%; height: 100%;">
+                    
+                </div>
+                <div class="hero-text">
+                    <h1 class="portfolio-title">My Portfolio</h1>
+                    <h2 class="subtitle">Computer Science Major | Philosophy Minor</h2>
+                    <p class="university">Missouri University of Science and Technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Section -->
+    <section id="photo" class="photo-section">
+        <div class="container">
+            <h2>Photo</h2>
+            <div class="photo-content">
+                <div class="large-placeholder-image">
+                    <span>Professional Portfolio Photos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="about" class="intro-section">
+        <div class="container">
+            <h2>Introduction</h2>
+            <div class="intro-content">
+                <h3>About Me</h3>
+                <p>Jarod Rieth is an enthusiastic Computer Science major at Missouri University of Science and Technology, specializing in Computational Science, with a minor in Philosophy. Throughout his academic journey, he has combined technical proficiency with creative insight, exemplified by his research project "Who Built the Mountain that LLMs Scale? Data Provenance and the Ethics of Generative AI." This study reflects his dedication to addressing complex ethical issues in artificial intelligence through meticulous analysis and a strong commitment to data integrity.</p>
+                
+                <p>Jarod's technical skills include proficiency in programming languages such as C++, Python, SQL, and bash shell scripting, and he is comfortable working across Windows, Linux, and MacOS platforms. His interdisciplinary background further enhances his ability to merge rigorous computational methods with philosophical inquiry, particularly in the realms of machine learning and data mining. Alongside his technical expertise, his classical piano training nurtures a refined attention to detail and creative problem solving.</p>
+                
+                <p>His diverse work experience—from roles as a medical records technician and pharmacy technician to a restaurant host—highlights his excellent interpersonal skills, adaptability, and strong work ethic, making him a valuable asset in any team.</p>
+
+                <div class="skills-section">
+                    <h4>Technical Skills</h4>
+                    <div class="skills-grid">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Bash Shell Scripting</span>
+                        <span class="skill-tag">Windows</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">MacOS</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Mining</span>
+                        <span class="skill-tag">Classical Piano</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <h2>Research</h2>
+            
+            <div class="research-subsection">
+                <h3>Literature Review: Data Provenance in AI</h3>
+                <p>Over the past few years, generative AI has increasingly grown in intelligence and usage across nearly every domain. For some, this itself, the very concept of machine learning or using generative AI for anything whatsoever is fundamentally at odds with their moral compass. However, I realize that technological progress is an inevitable part of societal evolution. Yet, we cannot ignore the fact that these AI models are literally built upon a mountain of creative labor, without which, they would never have reached the skies. It is only this mountain that has allowed companies like OpenAI, Google, Meta to reach the skies that they currently reside in. It is important for us to understand what training data do popular generative AI Models rely on, how much of it is open source vs proprietary, do these AI Models document or keep record of what data they are using. This literature review will look at the current state of data provenance and data tracking of common AI models.</p>
+            </div>
+
+            <div class="research-subsection">
+                <h3>Data Analysis: Data Provenance in AI</h3>
+                <p>Continuing our analysis of data provenance and tracking, in this study we look at the prevalence of specific keywords like "data tracking", "data provenance", "data integrity", "copyright protection", etc. in the abstract of all Computer Science research found on arXiv's massive 2.5+ million paper repository. This was done with the help of a dataset of all the research paper metadata which was found on kaggle. The graph on the left was produced by my python script that tracked the number papers containing these keywords in the data set and comparing it with the total number of papers published during that year. It is clear that there is a lack of interest in protecting and tracking data and this needs to improve.</p>
+                
+                <div class="data-visualization">
+                    <div class="chart-placeholder">
+                        <span>Data Visualization Chart</span>
+                        <p>Prevalence of Data Provenance Keywords in arXiv Papers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <p>Get in touch to discuss research opportunities, collaborations, or professional inquiries.</p>
+                <div class="contact-info">
+                    <p><strong>University:</strong> Missouri University of Science and Technology</p>
+                    <p><strong>Specialization:</strong> Computational Science</p>
+                    <p><strong>Research Focus:</strong> AI Ethics & Data Provenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Number -->
+    <div class="page-number">
+        <span id="current-page">1</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
