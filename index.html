@@ -9,6 +9,7 @@
   <script src="js/script.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
     /* simple scroll‑snap so each section feels like a "page" */
@@ -60,7 +61,7 @@
         
         <a href="#about" class="hover:text-emerald-400 transition">About Me</a>
         <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
-        <a href="https://github.com/JRizzled" class="hover:text-emerald-400 transition">GitHub</a>
+
         <button onclick="transitionToPage('index2.html')"">Page Change</button>
   
 
@@ -73,12 +74,11 @@
       </button>
     </div>
     <!-- mobile nav -->
-    <nav id="mobile-nav" class="hidden flex-col gap-6 pb-8 pt-4 md:hidden">
+    <nav id="mobile-nav" class="hidden flex-col gap-6 pb-8 pt-4 md:hidden ">
       <a href="#home" class="px-4" onclick="toggleNav()">Home</a>
       <a href="#photo" class="px-4" onclick="toggleNav()">Photo</a>
       <a href="#about" class="px-4" onclick="toggleNav()">About Me</a>
       <a href="#contact" class="px-4" onclick="toggleNav()">Contact</a>
-      <a href="https://github.com/JRizzled" class="px-4">GitHub</a>
     </nav>
   </header>
 
@@ -89,7 +89,6 @@
       <div class="flex flex-col justify-center bg-zinc-800 px-8 py-16 md:px-16">
         <h1 class="text-6xl font-bold leading-tight md:text-8xl">My<br />Portfolio</h1>
         <hr class="my-8 border-zinc-600" />
-        <span class="mt-auto text-sm text-zinc-400">Page | 01</span>
       
       </div>
     </div>
@@ -104,7 +103,6 @@
         <p>Jarod’s technical skills include proficiency in programming languages such as C++, Python, SQL, and bash shell scripting, and he is comfortable working across Windows, Linux, and MacOS platforms. His interdisciplinary background further enhances his ability to merge rigorous computational methods with philosophical inquiry, particularly in the realms of machine learning and data mining. Alongside his technical expertise, his classical piano training nurtures a refined attention to detail and creative problem solving.</p>
         <p>His diverse work experience—from roles as a medical records technician and pharmacy technician to a restaurant host—highlights his excellent interpersonal skills, adaptability, and strong work ethic, making him a valuable asset in any team.</p>
       </div>
-      <span class="mt-12 text-sm text-zinc-400">Page | 02</span>
     </div>
   </section>
 
@@ -123,7 +121,6 @@
         </div>
       </div>
     </div>
-    <span class="absolute bottom-6 right-10 text-sm text-zinc-400">Page | 03</span>
   </section>
 
   <!-- ========== RESEARCH – DATA ANALYSIS ========== -->
@@ -138,7 +135,6 @@
         <p class="mt-8 text-lg leading-relaxed text-gray-200">Continuing our analysis of data provenance and tracking, this study examines the prevalence of keywords such as “data tracking”, “data provenance”, “data integrity”, and “copyright protection” within the abstracts of every Computer Science research paper in arXiv’s 2.5+ million‑paper corpus. Using Kaggle‑sourced metadata and a custom Python script, we tracked occurrences of these keywords by publication year and compared them with total paper counts. The resulting visualization highlights an industry‑wide deficit of attention to data tracking and protection—an issue that must be addressed.</p>
       </div>
     </div>
-    <span class="absolute bottom-6 right-10 text-sm text-zinc-400">Page | 03</span>
 
   </section>
     <!-- ========== RESEARCH – Economic Recession Prediction ========== -->
@@ -156,7 +152,6 @@
         </div>
       </div>
     </div>
-    <span class="absolute bottom-6 right-10 text-sm text-zinc-400">Page | 03</span>
   </section>
   
 
@@ -164,9 +159,10 @@
   <section id="contact" class="flex min-h-screen flex-col items-center justify-center bg-zinc-800 px-8 text-center">
     <h2 class="text-4xl font-bold md:text-5xl">Get in Touch</h2>
     <p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-200">Feel free to reach out for collaboration, questions, or just to say hello!</p>
-    <a href="mailto:jarod.rieth@example.com" class="mt-10 rounded-2xl px-8 py-4 text-lg font-medium text-zinc-900 bg-emerald-400 hover:bg-emerald-300 transition">Send an Email</a>
-    <a href="https://github.com/JRizzled" target="_blank" class="mt-4 rounded-2xl px-8 py-4 text-lg font-medium text-zinc-900 bg-zinc-200 hover:bg-zinc-100 transition">GitHub Profile</a>
-    <span class="mt-24 text-sm text-zinc-400">Page | 04</span>
+    <a href="mailto:jarod.rieth@example.com" class="hover:text-white mt-10 rounded-2xl px-8 py-4 text-lg font-medium text-zinc-900 bg-red-800 hover:bg-emerald-300 transition">Send an Email</a>
+    <a href="https://github.com/JRizzled" class="hover:text-emerald-400 mt-10 bg-zinc-900 px-8 py-3 rounded-2xl transition" target="_blank"> 
+      <i class="fa fa-github"></i>  <!-- Font Awesome GitHub icon -->
+    GitHub</a> 
   </section>
 
   <!-- ========== FOOTER / SMALL SCRIPT ========== -->
