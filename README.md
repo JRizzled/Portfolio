@@ -1,10 +1,5 @@
 # Portfolio
 Organized structure:
-- html: HTML pages
-- css: stylesheets
-- js: scripts
-- images: images
-- pdfs: project PDFs
+- html: HTML pages and assets (css, js, images, pdfs)
 - texts: notes and blurbs
-
 My Portfolio and stuff
